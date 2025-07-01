@@ -1,0 +1,3 @@
+/home/shakir-salam/Documents/proj/focix/build/CMakeFiles/Focix.dir
+/home/shakir-salam/Documents/proj/focix/build/CMakeFiles/edit_cache.dir
+/home/shakir-salam/Documents/proj/focix/build/CMakeFiles/rebuild_cache.dir
