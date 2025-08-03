@@ -1,22 +1,35 @@
-body {
-  font-family: Arial, sans-serif;
+body
+{
+  font-family: Arial, sans-serif, bold;
   text-align: center;
   margin-top: 50px;
+  margin-right: 400px;
+  margin-left: 400px;
+  border: 3px solid #ccc
 }
-input {
+
+input
+{
   margin: 5px;
   padding: 8px;
   width: 200px;
 }
-button {
+
+button
+{
   padding: 10px 20px;
   margin: 10px;
 }
-.tabs button {
+
+.tabs button 
+{
   margin: 5px;
 }
-.tab-content {
-  margin-top: 20px;
+
+.tab-content
+{
+  margin-top: 20px; 
   border: 1px solid #ccc;
   padding: 20px;
 }
+
