@@ -13,7 +13,7 @@ body
   height: 50px;
   display: block;
   padding-top: 20px;
-  margin: 0 auto 10px;
+  margin: 0 auto 10px;    
 }
 
 
@@ -29,6 +29,13 @@ input::placeholder {
   font-weight: bold;
   color: #555; /* optional: make it more visible */
 }
+
+input:focus {
+  outline: none;
+  border-color: #007BFF; /* brighter blue */
+  box-shadow: 0 0 5px #007BFF;
+}
+
 
 button
 {
