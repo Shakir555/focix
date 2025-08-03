@@ -1,0 +1,22 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 50px;
+}
+input {
+  margin: 5px;
+  padding: 8px;
+  width: 200px;
+}
+button {
+  padding: 10px 20px;
+  margin: 10px;
+}
+.tabs button {
+  margin: 5px;
+}
+.tab-content {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 20px;
+}

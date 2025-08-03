@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Focix Dashboard</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h2>Welcome to Focix</h2>
+  <div class="tabs">
+    <button onclick="showTab('new')">New Request</button>
+    <button onclick="showTab('progress')">In Progress</button>
+    <button onclick="showTab('completed')">Completed</button>
+  </div>
+  <div id="new" class="tab-content">No new requests.</div>
+  <div id="progress" class="tab-content" style="display:none;">Nothing in progress.</div>
+  <div id="completed" class="tab-content" style="display:none;">No completed tasks.</div>
+  <script src="/script.js"></script>
+</body>
+</html>
