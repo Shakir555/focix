@@ -1,40 +1,58 @@
-// Import required modules
-const express = require('express'); // Web framework
-const fs = require('fs'); // File system module for reading/writing files
-const path = require('path'); // Utility for handling file paths
-const session = require('express-session'); // Middleware for session management
-const bodyParser = require('body-parser'); // Middleware to parse form data
+// Modules
+// Web Framework
+const express = require('express');
+// File System Module for reading / writing files
+const fs = require('fs');
+// Utility for handling file paths
+const path = require('path');
+// Middleware for session management
+const session = require('express-session');
+// Middleware to parse form-data
+const bodyParser = require('body-parser');
 
 // Initialize Express app
 const app = express();
-const PORT = 3000; // Port number for the server
+// Port Number for the server
+const PORT = 3000;
 
 // Middleware setup
-app.use(express.static('public')); // Serve static files from 'public' folder
-app.use(bodyParser.urlencoded({ extended: true })); // Parse URL-encoded form data
+// Serve static files from 'public' folder
+app.use(express.static('public'));
+// Parse URL-encoded form data
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(session({
-  secret: 'focix_secret', // Secret key for session encryption
-  resave: false, // Don't save session if unmodified
-  saveUninitialized: true // Save new sessions even if they're empty
+  // Secret Key for session encryption
+  secret: 'focix_secret',
+  // Don't save session if unmodified
+  resave: false,
+  // Save new sessions even if empty
+  saveUninitialized: true
 }));
 
 // Path to user data file
 const USERS_FILE = path.join(__dirname, 'users.json');
 
 // Function to load users from JSON file
-function loadUsers() {
-  if (!fs.existsSync(USERS_FILE)) return {}; // If file doesn't exist, return empty object
-  return JSON.parse(fs.readFileSync(USERS_FILE)); // Read and parse user data
+function loadUsers()
+{
+  if (!fs.existsSync(USERS_FILE))
+  {
+    // If file doesnt exist, return empty object
+    return {}
+  }
+  // Read and parse user data
+  return JSON.parse(fs.readFileSync(USERS_FILE));
 }
 
 // Function to save users to JSON file
-function saveUsers(users) {
-  fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2)); // Write user data to file
+function saveUsers(users)
+{
+  // Write user data to file 
+  fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2));
 }
 
 // Routes
-
-// Redirect root URL to login page
+// Redirect root url to login page
 app.get('/', (req, res) => res.redirect('/login'));
 
 // Serve login page
@@ -45,37 +63,57 @@ app.get('/login', (req, res) => {
 // Serve registration page
 app.get('/register', (req, res) => {
   res.sendFile(path.join(__dirname, 'views/register.html'));
-});
+})
 
-// Serve dashboard page only if user is logged in
+// Serve dashboard page if user logged in
 app.get('/dashboard', (req, res) => {
-  if (!req.session.username) return res.redirect('/login'); // Redirect if not logged in
+  // Redirect if no logged in
+  if(!req.session.username)
+  {
+    return res.redirect('/login');
+  }
+
   res.sendFile(path.join(__dirname, 'views/dashboard.html'));
 });
 
 // Handle user registration
 app.post('/register', (req, res) => {
-  const { username, password } = req.body; // Get form data
-  const users = loadUsers(); // Load existing users
-
-  if (users[username]) return res.send('User already exists'); // Check for duplicate
-
-  users[username] = { password }; // Add new user
-  saveUsers(users); // Save updated user list
-  res.redirect('/login'); // Redirect to login page
+  // Get form data
+  const {username, password} = req.body;
+  // Load existing users
+  const users = loadUsers();
+  // Check for duplicate
+  if (users[username])
+  {
+    return res.send('User already exists');
+  }
+  // Add New User
+  users[username] = {password};
+  // Save updated user list
+  saveUsers(users);
+  // Redirect to login page
+  res.redirect('/login');
 });
 
-// Handle user login
+// Handle User Login
 app.post('/login', (req, res) => {
-  const { username, password } = req.body; // Get form data
-  const users = loadUsers(); // Load users
+  // Get form data
+  const {username, password} = req.body;
+  // Load Users
+  const users = loadUsers();
 
-  // Validate credentials
-  if (users[username] && users[username].password === password) {
-    req.session.username = username; // Save username in session
-    res.redirect('/dashboard'); // Redirect to dashboard
-  } else {
-    res.send('Invalid credentials'); // Show error message
+  // Validate Credentials
+  if (users[username] && users[username].password === password)
+  {
+    // Save username in session
+    req.session.username = username;
+    // Redirect to dashboard
+    res.redirect('/dashboard');
+  }
+  else
+  {
+    // Show Error Message
+    res.send('Invalid credentials');
   }
 });
 
