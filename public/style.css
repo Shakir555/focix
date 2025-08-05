@@ -35,12 +35,41 @@ input:focus {
   box-shadow: 0 0 5px #007BFF;
 }
 
-
-button
+button 
 {
-  font-family: bold;
-  padding: 10px 5px;
-  margin: 10px;
+  padding: 6px 12px;
+  font-size: 14px;
+  height: auto; /* ensures it fits content */
+  line-height: 1.4;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.register-btn
+{
+  padding: 6px 12px;
+  background-color: #28a745;
+  color: white;
+}
+
+.register-btn:hover 
+{
+  background-color: #218838;
+}
+
+.login-btn
+{
+  padding: 6px 12px;
+  background-color: #007bff;
+  color: white;
+}
+
+.login-btn:hover
+{
+  background-color: #0056b3; 
 }
 
 .tabs button 
