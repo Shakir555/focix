@@ -5,13 +5,19 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 <body class="login-page">
-  <img src="/img/user.jpg" alt="User Icon" class="user-icon">
-  <h2>Login</h2>
-  <form method="POST" action="/login">
-    <input type="text" name="username" placeholder="Username" required><br>
-    <input type="password" name="password" placeholder="Password" required><br>
-    <button type="submit" class="login-btn">Login</button>
-  </form>
-  <p><b>Don't have an account?</b><a href="/register"> <b>Register here</b></a></p>
+  <div class="container">
+    <img src="/img/user_login.jpg" alt="User Icon" class="user-icon">
+    <h2>Login</h2>
+    <form method="POST" action="/login">
+      <label for="username">Username</label>
+      <input type="text" name="username" placeholder="Username" required>
+
+      <label for="password">Password</label>
+      <input type="password" name="password" placeholder="Password" required>
+
+      <input type="submit" value="Login" class="login-btn">
+    </form>
+    <p><b>Don't have an account?</b> <a href="/register"><b>Register here</b></a></p>
+  </div>
 </body>
 </html>

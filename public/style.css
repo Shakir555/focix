@@ -2,91 +2,137 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  margin: 50px 400px;
-  padding-bottom: 30px;
-  overflow: auto;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
 }
 
 .user-icon {
   width: 50px;
   height: 50px;
   display: block;
-  padding-top: 20px;
   margin: 0 auto 10px;
+  padding-top: 10px;
 }
 
-input {
-  margin: 5px;
-  padding: 8px;
-  width: 200px;
-  border: 3px solid;
+/* Shared container styling */
+.container {
+  max-width: 500px;
+  margin: 80px auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-input::placeholder {
-  font-weight: bold;
-  color: #555;
+/* Register Page - Light Green Background Inside Border */
+.register-page .container {
+  background-color: #e6f9e6; /* soft light green */
+  border: 2px solid #a8d5ba;
 }
 
-input:focus {
-  outline: none;
-  box-shadow: 0 0 5px;
+.register-page h2 {
+  color: #3c8c5a;
 }
 
-/* Register Page - Green Theme */
-.register-page {
-  border: 3px solid #28a745;
-  background-color: #e9fbe9;
+
+
+.register-page label {
+  margin-top: 50px;
+  font-weight: bold;  
+  color: #2f4f4f;
 }
 
 .register-page input {
-  border-color: #28a745;
-}
-
-.register-page input:focus {
-  border-color: #218838;
-  box-shadow: 0 0 5px #218838;
+  margin-top: 5px;
+  border: 1px solid #b2d8c2;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  width: 90%;
+  margin-bottom: 15px;
+  font-size: 16px;
 }
 
 .register-btn {
-  background-color: #28a745;
-  color: white;
+  margin-top: 100px;
+  display: inline-block;       /* Prevents stretching */
+  font-size: 12px;             /* Smaller text */
+  font-weight: bold;
+  background-color: #6fbf73;
+  color: black;
+  border: 2px solid #3c8c5a;
+  outline: 0.5px solid #2e703f;
+  cursor: pointer;
+  padding: 20px 12px;           /* Smaller padding */
+  width: auto;                 /* Shrinks to fit content */
+  max-width: 100px;            /* Optional: limit max width */
+  border-radius: 2px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
+
+
 
 .register-btn:hover {
-  background-color: #218838;
+  background-color: #5aa85f;
+  color: white;
+  outline: 2px solid #1f4f2d; /* Even darker outline on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(1.00);
 }
 
-/* Login Page - Blue Theme */
-.login-page {
-  border: 3px solid #007bff;
-  background-color: #e6f0ff;
+
+
+/* Login Page - Enhanced Light Blue Background Inside Border */
+.login-page .container {
+  background-color: #d6eaff; /* brighter pastel blue */
+  border: 2px solid #7fbfff; /* slightly stronger border */
+}
+
+.login-page h2 {
+  color: #2f6fa5;
 }
 
 .login-page input {
-  border-color: #007bff;
+  border: 1px solid #7fbfff;
 }
 
-.login-page input:focus {
-  border-color: #0056b3;
-  box-shadow: 0 0 5px #0056b3;
+.login-page label {
+  color: #2f4f4f;
+}
+
+.login-page input {
+  border: 1px solid #a0c4ff;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  width: 90%;
+  margin-bottom: 15px;
+  font-size: 16px;
 }
 
 .login-btn {
-  background-color: #007bff;
+  background-color: #4a90e2;
   color: white;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  width: auto;
 }
 
 .login-btn:hover {
-  background-color: #0056b3;
+  background-color: #357ab8;
 }
 
-/* Optional: Tabs and content styling */
-.tabs button {
-  margin: 5px;
+/* Link styling */
+a {
+  color: #3c8c5a;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
 }
 
-.tab-content {
-  margin-top: 20px;
-  border: 1px solid #1E90FF;
-  padding: 20px;
+a:hover {
+  text-decoration: underline;
 }
